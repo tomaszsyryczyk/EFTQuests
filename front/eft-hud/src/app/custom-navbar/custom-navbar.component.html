@@ -1,0 +1,17 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close()" >
+  <mat-sidenav class="nav-bar" #sidenav (keydown.escape)="close()" disableClose>
+    <p>
+      <button mat-stroked-button (click)="hideout()">Hideout</button>
+    </p>
+    <p>
+      <button mat-stroked-button (click)="merchants()">Merchants</button>
+    </p>
+    
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+      <mat-toolbar><p class="menu-button"><button mat-button (click)="sidenav.open()">Menu</button></p></mat-toolbar>
+      
+      <router-outlet class="app-content-container"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
