@@ -7,27 +7,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud", "EFT_Hud\EFT_Hud.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Merchants", "Merchants", "{E0B31DCB-6E06-4A26-8356-0DBB67107263}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Merchants.Services", "Merchants\EFT_Hud.Merchants.Services\EFT_Hud.Merchants.Services.csproj", "{A9F66599-978C-43B8-B039-E1D78DBF9E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Merchants.Services", "Merchants\EFT_Hud.Merchants.Services\EFT_Hud.Merchants.Services.csproj", "{A9F66599-978C-43B8-B039-E1D78DBF9E1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Merchants.Interfaces", "Merchants\EFT_Hud.Merchants.Interfaces\EFT_Hud.Merchants.Interfaces.csproj", "{D24BC842-3EC9-40BE-B38A-58D4C23BB8C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Merchants.Interfaces", "Merchants\EFT_Hud.Merchants.Interfaces\EFT_Hud.Merchants.Interfaces.csproj", "{D24BC842-3EC9-40BE-B38A-58D4C23BB8C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locations", "Locations", "{EE9DE10A-654B-49F1-85F0-C3C9FEA13AD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Locations.Interfaces", "Locations\EFT_Hud.Locations.Interfaces\EFT_Hud.Locations.Interfaces.csproj", "{D994C36E-E62A-426F-911F-77C536F60671}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Locations.Interfaces", "Locations\EFT_Hud.Locations.Interfaces\EFT_Hud.Locations.Interfaces.csproj", "{D994C36E-E62A-426F-911F-77C536F60671}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Locations.Services", "Locations\EFT_Hud.Locations.Services\EFT_Hud.Locations.Services.csproj", "{79302C7D-D594-4CC1-BA42-D74A3CA5614D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Locations.Services", "Locations\EFT_Hud.Locations.Services\EFT_Hud.Locations.Services.csproj", "{79302C7D-D594-4CC1-BA42-D74A3CA5614D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quests", "Quests", "{13EBBDC6-D22E-4DA0-B70F-30511B4B6FB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Quests.Interfaces", "Quests\EFT_Hud.Quests.Interfaces\EFT_Hud.Quests.Interfaces.csproj", "{08EC4F6E-1FB1-44AB-90FD-4077F9E9A0D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Quests.Interfaces", "Quests\EFT_Hud.Quests.Interfaces\EFT_Hud.Quests.Interfaces.csproj", "{08EC4F6E-1FB1-44AB-90FD-4077F9E9A0D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Quests.Services", "Quests\EFT_Hud.Quests.Services\EFT_Hud.Quests.Services.csproj", "{277C81BE-7782-4A32-A3F8-AC5F839AEDEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.Quests.Services", "Quests\EFT_Hud.Quests.Services\EFT_Hud.Quests.Services.csproj", "{277C81BE-7782-4A32-A3F8-AC5F839AEDEF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{9FDD7F35-F464-4845-B371-8D21AC41DF36}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.DAL", "DAL\EFT_Hud.DAL\EFT_Hud.DAL.csproj", "{3B495A6D-4478-4B40-9661-AE6CF4A75A80}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.DAL.Entities", "DAL\EFT_Hud.DAL.Entities\EFT_Hud.DAL.Entities.csproj", "{6E7F049F-34DA-4677-BFE6-21F603E0F0D3}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{72706AEA-3190-401A-B1FD-A44313C08F5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{6E7F049F-34DA-4677-BFE6-21F603E0F0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E7F049F-34DA-4677-BFE6-21F603E0F0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E7F049F-34DA-4677-BFE6-21F603E0F0D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

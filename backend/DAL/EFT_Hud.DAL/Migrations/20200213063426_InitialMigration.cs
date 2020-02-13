@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EFT_Hud.DAL.Migrations
 {
@@ -11,7 +12,7 @@ namespace EFT_Hud.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     ShortName = table.Column<string>(nullable: true),
                     IconName = table.Column<string>(nullable: true)
@@ -22,11 +23,24 @@ namespace EFT_Hud.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Locations",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Locations", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Merchant",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     IconName = table.Column<string>(nullable: true)
                 },
@@ -40,7 +54,7 @@ namespace EFT_Hud.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Merchant_Id = table.Column<int>(nullable: false),
                     Done = table.Column<bool>(nullable: false)
@@ -61,7 +75,7 @@ namespace EFT_Hud.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Quest_Id = table.Column<int>(nullable: false),
                     Count = table.Column<int>(nullable: false),
                     FindInRaid = table.Column<bool>(nullable: false),
@@ -85,11 +99,35 @@ namespace EFT_Hud.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "LocationToQuest",
+                columns: table => new
+                {
+                    LocationId = table.Column<int>(nullable: false),
+                    QuestId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LocationToQuest", x => new { x.LocationId, x.QuestId });
+                    table.ForeignKey(
+                        name: "FK_LocationToQuest_Quest_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Quest",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_LocationToQuest_Locations_QuestId",
+                        column: x => x.QuestId,
+                        principalTable: "Locations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Objective",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     Type = table.Column<int>(nullable: false),
                     Quest_Id = table.Column<int>(nullable: false)
@@ -110,7 +148,7 @@ namespace EFT_Hud.DAL.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Type = table.Column<int>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     Count = table.Column<int>(nullable: false),
@@ -127,6 +165,35 @@ namespace EFT_Hud.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Locations",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Shoreline" },
+                    { 2, "Woods" },
+                    { 3, "Interchange" },
+                    { 4, "Customs" },
+                    { 5, "Factory" },
+                    { 6, "Reserve" },
+                    { 7, "The Lab" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Merchant",
+                columns: new[] { "Id", "IconName", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Prapor_Portrait.png", "Prapor" },
+                    { 2, "Therapist_Portrait.png", "Therapist" },
+                    { 3, "Skier_Portrait.png", "Skier" },
+                    { 4, "Peacekeeper_Portrait.png", "Peacekeeper" },
+                    { 5, "Mechanic_Portrait.png", "Mechanic" },
+                    { 6, "Ragman_Portrait.png", "Ragman" },
+                    { 7, "Jaeger_Portrait.png", "Jaeger" },
+                    { 8, "Fence_Portrait.png", "Fence" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_ItemObjective_Item_Id",
                 table: "ItemObjective",
@@ -136,6 +203,11 @@ namespace EFT_Hud.DAL.Migrations
                 name: "IX_ItemObjective_Quest_Id",
                 table: "ItemObjective",
                 column: "Quest_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_LocationToQuest_QuestId",
+                table: "LocationToQuest",
+                column: "QuestId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Objective_Quest_Id",
@@ -159,6 +231,9 @@ namespace EFT_Hud.DAL.Migrations
                 name: "ItemObjective");
 
             migrationBuilder.DropTable(
+                name: "LocationToQuest");
+
+            migrationBuilder.DropTable(
                 name: "Objective");
 
             migrationBuilder.DropTable(
@@ -166,6 +241,9 @@ namespace EFT_Hud.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Item");
+
+            migrationBuilder.DropTable(
+                name: "Locations");
 
             migrationBuilder.DropTable(
                 name: "Quest");

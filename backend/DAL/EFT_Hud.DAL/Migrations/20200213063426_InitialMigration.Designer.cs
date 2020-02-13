@@ -2,14 +2,13 @@
 using EFT_Hud.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFT_Hud.DAL.Migrations
 {
     [DbContext(typeof(EftHudDbContext))]
-    [Migration("20200213000857_InitialMigration")]
+    [Migration("20200213063426_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,24 +16,22 @@ namespace EFT_Hud.DAL.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.1")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("EFT_Hud.DAL.Entities.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("IconName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("ShortName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -45,14 +42,13 @@ namespace EFT_Hud.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
                     b.Property<bool>("FindInRaid")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("ItemId")
                         .HasColumnName("Item_Id")
@@ -71,33 +67,147 @@ namespace EFT_Hud.DAL.Migrations
                     b.ToTable("ItemObjective");
                 });
 
+            modelBuilder.Entity("EFT_Hud.DAL.Entities.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Shoreline"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Woods"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Interchange"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Customs"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Factory"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Reserve"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "The Lab"
+                        });
+                });
+
+            modelBuilder.Entity("EFT_Hud.DAL.Entities.LocationToQuest", b =>
+                {
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LocationId", "QuestId");
+
+                    b.HasIndex("QuestId");
+
+                    b.ToTable("LocationToQuest");
+                });
+
             modelBuilder.Entity("EFT_Hud.DAL.Entities.Merchant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("IconName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
                     b.ToTable("Merchant");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IconName = "Prapor_Portrait.png",
+                            Name = "Prapor"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IconName = "Therapist_Portrait.png",
+                            Name = "Therapist"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IconName = "Skier_Portrait.png",
+                            Name = "Skier"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IconName = "Peacekeeper_Portrait.png",
+                            Name = "Peacekeeper"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IconName = "Mechanic_Portrait.png",
+                            Name = "Mechanic"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            IconName = "Ragman_Portrait.png",
+                            Name = "Ragman"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            IconName = "Jaeger_Portrait.png",
+                            Name = "Jaeger"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IconName = "Fence_Portrait.png",
+                            Name = "Fence"
+                        });
                 });
 
             modelBuilder.Entity("EFT_Hud.DAL.Entities.Objective", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("QuestId")
                         .HasColumnName("Quest_Id")
@@ -117,18 +227,17 @@ namespace EFT_Hud.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<bool>("Done")
-                        .HasColumnType("bit");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("MerchantId")
                         .HasColumnName("Merchant_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -141,14 +250,13 @@ namespace EFT_Hud.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("QuestId")
                         .HasColumnName("Quest_Id")
@@ -174,6 +282,21 @@ namespace EFT_Hud.DAL.Migrations
 
                     b.HasOne("EFT_Hud.DAL.Entities.Quest", "Quest")
                         .WithMany("ItemObjectives")
+                        .HasForeignKey("QuestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EFT_Hud.DAL.Entities.LocationToQuest", b =>
+                {
+                    b.HasOne("EFT_Hud.DAL.Entities.Quest", "Quest")
+                        .WithMany("Locations")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EFT_Hud.DAL.Entities.Location", "Location")
+                        .WithMany("Quests")
                         .HasForeignKey("QuestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
