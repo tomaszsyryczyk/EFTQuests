@@ -19,5 +19,7 @@ namespace EFT_Hud.DAL.Entities
         public ICollection<Objective> Objectives { get; set; }
 
         public ICollection<ItemObjective> ItemObjectives { get; set; }
+
+        public ICollection<Reward> Rewards { get; set; }
     }
 }

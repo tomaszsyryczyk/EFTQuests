@@ -23,7 +23,9 @@ namespace EFT_Hud
             services.AddControllers();
             services.AddCors();
             services.AddDbContext<EftHudDbContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("DbContext"));
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DbContext"), 
+                    x => x.MigrationsAssembly("EFT_Hud.DAL"));
             });
         }
 
