@@ -30,7 +30,8 @@ namespace EFT_Hud
             services.AddDbContext<EftHudDbContext>(options => {
                 options.UseMySql(
                     Configuration.GetConnectionString("DbContext"), 
-                    x => x.MigrationsAssembly("EFT_Hud.DAL"));
+                    x => x.MigrationsAssembly("EFT_Hud.DAL")
+                        .EnableRetryOnFailure(3));
             });
 
             RepositoriesInstaller.Install(services);

@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   eft_hud:
+    container_name: eft_hud
     image: ${DOCKER_REGISTRY-}efthud
     build:
       context: .
@@ -18,6 +19,7 @@ services:
       - my-network-name
 
   sqlserver:  
+    container_name: sqlserver
     image: mysql:8
     restart: always
     environment:
