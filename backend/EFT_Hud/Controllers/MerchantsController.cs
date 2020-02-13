@@ -1,53 +1,34 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using EFT_Hud.Models;
+using EFT_Hud.Merchants.Services;
+using EFT_Hud.Merchants.Services.Dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace EFT_Hud.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class MerchantsController : ControllerBase
+    public class MerchantsController : EFTHudControllerBase
     {
         
         private readonly ILogger<MerchantsController> _logger;
+        private readonly IMerchantsService _merchantsService;
 
-        public MerchantsController(ILogger<MerchantsController> logger)
+        public MerchantsController(ILogger<MerchantsController> logger, IMerchantsService merchantsService)
         {
+            _merchantsService = merchantsService;
             _logger = logger;
         }
-
-        private List<MerchantDto> _merchants = new List<MerchantDto>(){
-                new MerchantDto(){
-                    Id = 1,
-                    Name = "Prapor",
-                    IconName = "Prapor_Portrait.png"
-                },
-                new MerchantDto(){
-                    Id = 2,
-                    Name = "Therapist",
-                    IconName = "Therapist_Portrait.png"
-                },
-                new MerchantDto(){
-                    Id = 3,
-                    Name = "Mechanic",
-                    IconName = "Mechanic_Portrait.png"
-                }
-            };
 
         [HttpGet]
         public IEnumerable<MerchantDto> Get()
         {
-            return _merchants;
+            var merchants = _merchantsService.GetAll();
+            return merchants;
         }
 
         [HttpGet("{id}")]
-        public MerchantDto Get(long Id)
+        public MerchantDetailsDto Get(int id)
         {
-            var result =_merchants.Find(x => x.Id == Id);
-
-            result.Quests = QuestsController._quests.Where(x => x.MerchantId == Id).ToList();
+            var result = _merchantsService.GetDetails(id);
 
             return result;
         }

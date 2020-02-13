@@ -1,10 +1,14 @@
 using EFT_Hud.DAL.Entities;
+using EFT_Hud.DAL.Repositories;
+using EFT_Hud.Filters;
+using EFT_Hud.Locations.Services;
+using EFT_Hud.Merchants.Services;
+using EFT_Hud.Quests.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace EFT_Hud
 {
@@ -20,25 +24,31 @@ namespace EFT_Hud
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options => options.Filters.Add(new HttpResponseExceptionFilter()));
             services.AddCors();
+            
             services.AddDbContext<EftHudDbContext>(options => {
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DbContext"), 
                     x => x.MigrationsAssembly("EFT_Hud.DAL"));
             });
+
+            RepositoriesInstaller.Install(services);
+            ServiceInstaller(services);
+        }
+
+        private void ServiceInstaller(IServiceCollection services)
+        {
+            services.AddScoped<IMerchantsService, MerchantsService>();
+            services.AddScoped<ILocationsService, LocationsService>();
+            services.AddScoped<IQuestsService, QuestsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
             app.UseCors(
                 options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()

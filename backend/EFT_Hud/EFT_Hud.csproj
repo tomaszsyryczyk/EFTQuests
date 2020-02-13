@@ -6,10 +6,19 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EFT_Hud.DAL\EFT_Hud.DAL.csproj" />
+    <ProjectReference Include="..\DAL\EFT_Hud.DAL\EFT_Hud.DAL.csproj" />
+    <ProjectReference Include="..\Locations\EFT_Hud.Locations.Services\EFT_Hud.Locations.Services.csproj" />
+    <ProjectReference Include="..\Merchants\EFT_Hud.Merchants.Services\EFT_Hud.Merchants.Services.csproj" />
+    <ProjectReference Include="..\Quests\EFT_Hud.Quests.Services\EFT_Hud.Quests.Services.csproj" />
   </ItemGroup>
 
 

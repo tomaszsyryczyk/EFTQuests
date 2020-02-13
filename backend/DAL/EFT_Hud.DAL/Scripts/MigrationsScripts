@@ -1,0 +1,3 @@
+dotnet ef migrations add InitialMigration --project EFT_Hud.DAL --startup-project EFT_Hud
+
+dotnet ef database update --project EFT_Hud.DAL --startup-project EFT_Hud
