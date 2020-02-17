@@ -1,5 +1,5 @@
-<mat-sidenav-container class="example-container" (backdropClick)="close()" >
-    <mat-sidenav class="nav-bar" #sidenav (keydown.escape)="close()" disableClose>
+<mat-sidenav-container (backdropClick)="close()" >
+    <mat-sidenav #sidenav (keydown.escape)="close()" disableClose>
       <p>
         <button mat-stroked-button (click)="hideout()">Hideout</button>
       </p> 
