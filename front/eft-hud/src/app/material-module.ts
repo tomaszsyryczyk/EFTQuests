@@ -4,6 +4,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   exports: [
@@ -11,7 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatTooltipModule,
     MatButtonModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule,
   ]
 })
 export class CustomMaterialModule {}
