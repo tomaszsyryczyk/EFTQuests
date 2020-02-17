@@ -1,54 +1,72 @@
 .toolbar {
-    padding-left: 0;
+  padding-left: 0;
+  border-bottom: 1px solid var(--primary-color);
+  box-shadow: none;
+
+  &__back {
+    height: 64px;
+    width: 64px;
+    display: grid;
+    place-items: center;
+    border-right: 1px solid var(--primary-color);
+    margin-right: 1rem;
+  }
+}
+
+.nav-list {
+  &__item {
     border-bottom: 1px solid var(--primary-color);
-    box-shadow: none;
+  }
 
-    &__back {
-      height: 64px;
-      width: 64px;
-      display: grid;
-      place-items: center;
-      border-right: 1px solid var(--primary-color);
-      margin-right: 1rem;
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 63px;
+    text-decoration: none;
+    color: var(--link-color);
+    transition: colo 0.2s;
+
+    &--active {
+      color: var(--active-link-color);
+      background-color: rgba(0, 0, 0, 0.5);
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: var(--active-link-color);
     }
   }
 
-  .nav-list {
-    &__item {
-      border-bottom: 1px solid var(--primary-color);
-    }
-
-    &__link {
-      display: block;
-      padding: 0.5rem 1rem;
-      text-transform: uppercase;
-      text-align: left;
-
-      &:hover span {
-        transform: translateX(1rem);
-      }
-
-      &--active {
-        color: var(--primary-color);
-        pointer-events: none;
-      }
-
-      span {
-        transition: transform 0.2s;
-        display: inline-block;
-      }
-    }
+  &__icon {
+    margin-bottom: 0.25rem;
   }
 
-  .content {
-      padding: 1rem;
+  &__name {
+    font-size: 0.75em;
+    font-weight: 100;
   }
+}
 
-  .mat-sidenav {
-    width: 300px;
-    max-width: 100%;
-  }
+.mat-sidenav {
+  width: 65px;
+  overflow-x: hidden;
 
-  .mat-sidenav-content {
-      min-height: 100vh;
+  &__close {
+    height: 64px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid var(--primary-color);
   }
+}
+
+.mat-sidenav-content {
+  min-height: 100vh;
+}
+
+.mat-drawer-container {
+  background-color: var(--primary-background);
+}

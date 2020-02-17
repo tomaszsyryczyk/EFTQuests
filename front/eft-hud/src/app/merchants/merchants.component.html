@@ -1,10 +1,15 @@
 <mat-tab-group>
-    <mat-tab *ngFor="let merchant of merchants" style="height: 128px">
-        <ng-template  mat-tab-label>
+    <mat-tab *ngFor="let merchant of merchants">
+        <ng-template  mat-tab-label class="mat-tab-label">
                 <img [src]="imagesPath + merchant.iconName" />
         </ng-template>
         <ng-template matTabContent>
-            <app-quest-list [merchantId]="merchant.id"></app-quest-list>
+          <div class="title__container">
+            <h1 class="title">{{ merchant.name }}</h1>
+          </div>
+          <div class="content">
+            <app-quest-list *ngIf="merchant" [merchantId]="merchant.id"></app-quest-list>
+          </div>
         </ng-template>
     </mat-tab>
 </mat-tab-group>

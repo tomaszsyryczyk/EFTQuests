@@ -1,0 +1,35 @@
+@import 'node_modules/@angular/material/theming';
+@include mat-core();
+
+
+$eft-hud-primary: mat-palette($mat-brown);
+$eft-hud-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$eft-hud-warn: mat-palette($mat-red);
+$eft-hud-theme: mat-dark-theme($eft-hud-primary, $eft-hud-accent, $eft-hud-warn);
+@include angular-material-theme($eft-hud-theme);
+
+:root {
+  --primary-color: #795548;
+  --primary-background: #0e0e0e;
+  --link-color: #aeaeb0;
+  --active-list-color: #fff;
+}
+
+@import './material';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+.content {
+  padding: 1rem;
+}

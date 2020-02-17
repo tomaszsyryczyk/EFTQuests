@@ -1,14 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MerchantsService, Merchant } from '../services/merchants/merchants.service';
-import {  takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-import { Router } from '@angular/router';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Merchant, MerchantsService} from '../services/merchants/merchants.service';
+import {takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-merchants',
   templateUrl: './merchants.component.html',
-  styleUrls: ['./merchants.component.scss']
+  styleUrls: ['./merchants.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
+
 export class MerchantsComponent implements OnInit, OnDestroy {
   imagesPath : string = '/assets/images/merchants/';
 

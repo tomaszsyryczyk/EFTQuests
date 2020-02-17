@@ -1,46 +1,39 @@
-<mat-sidenav-container (backdropClick)="close()" >
-    <mat-sidenav class="mat-sidenav" #sidenav (keydown.escape)="close()" disableClose>
-      <mat-toolbar class="toolbar">
-        <div class="toolbar__back">
-          <button color="primary" mat-icon-button (click)="close()">
-            <mat-icon color="primary" >close</mat-icon>
-          </button>
-        </div>
-        <span class="toolbar__title">EFTHud</span>
-      </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" class="mat-sidenav" #sidenav (keydown.escape)="toggle()" disableClose>
 
-      <nav class="nav toolbar__nav">
-        <ul class="nav-list">
-          <li class="nav-list__item">
-            <a class="nav-list__link" routerLinkActive="nav-list__link--active" routerLink="hideout" mat-button>
-              <span>Hideout</span>
-            </a>
-          </li>
-          <li class="nav-list__item">
-            <a class="nav-list__link" routerLinkActive="nav-list__link--active" routerLink="merchants" mat-button>
-              <span>Merchants</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+    <nav class="nav toolbar__nav">
+      <ul class="nav-list">
+        <li class="nav-list__item">
+          <a class="nav-list__link" routerLinkActive="nav-list__link--active" routerLink="hideout">
+            <mat-icon class="nav-list__icon">home</mat-icon>
+            <span class="nav-list__name">Hideout</span>
+          </a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link" routerLinkActive="nav-list__link--active" routerLink="merchants">
+            <mat-icon class="nav-list__icon">accessibility_new</mat-icon>
+            <span class="nav-list__name">Merchants</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-    </mat-sidenav>
+  </mat-sidenav>
 
-    <mat-sidenav-content class="mat-sidenav-content">
+  <mat-sidenav-content class="mat-sidenav-content">
 
-        <mat-toolbar class="toolbar">
+    <mat-toolbar class="toolbar">
 
-          <div class="toolbar__back">
-            <button color="primary" mat-icon-button (click)="sidenav.open()">
-              <mat-icon color="primary">menu</mat-icon>
-            </button>
-          </div>
+      <div class="toolbar__back">
+        <button color="primary" mat-icon-button (click)="toggle()">
+          <mat-icon color="primary" *ngIf="showNav">menu_open</mat-icon>
+          <mat-icon color="primary" *ngIf="!showNav">menu</mat-icon>
+        </button>
+      </div>
 
-          <span class="toolbar__title">Escape From Tarkov <strong>HUD</strong></span>
+      <span class="toolbar__title">Escape From Tarkov <strong>HUD</strong></span>
 
-        </mat-toolbar>
-        <section class="content">
-            <router-outlet></router-outlet>
-        </section>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
