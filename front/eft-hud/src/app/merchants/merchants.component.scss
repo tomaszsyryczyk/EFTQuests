@@ -18,11 +18,7 @@
   border: 1px solid var(--primary-color);
   position: relative;
   z-index: 1;
-  background-color: #fff;
-
-  &:first-letter {
-    color: var(--primary-color);
-  }
+  background-color: var(--primary-background);
 
   &__container {
     display: flex;
