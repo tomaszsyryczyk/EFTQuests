@@ -15,14 +15,14 @@ export class QuestListComponent implements OnInit {
   constructor(private route : ActivatedRoute, private merchantService: MerchantsService) { }
 
   ngOnInit(): void {
-    debugger;
+    // debugger;
     this.loadQuestForMerchant(this.merchantId);
   }
 
   loadQuestForMerchant(merchantId: number) {
     this.merchantService.getMerchant(merchantId).subscribe((data: Merchant)=>{
-      debugger;
-      console.log(data);
+      // debugger;
+      console.table(data);
       this.merchant = data;
     })
   }

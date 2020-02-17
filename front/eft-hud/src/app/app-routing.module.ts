@@ -8,12 +8,13 @@ import { QuestListComponent } from './quest-list/quest-list.component';
 
 const appRoutes: Routes = [
   { path: 'hideout', component: HideoutComponent },
-  { path: 'merchants',      component: MerchantsComponent},
+  { path: 'merchants', component: MerchantsComponent },
+
   { path: '',
     redirectTo: '/hideout',
     pathMatch: 'full'
   },
-  { path: '**', component: PageNotFoundComponent } 
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 

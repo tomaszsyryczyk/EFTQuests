@@ -1,3 +1,44 @@
-.mat-tab-header-with-image {
-    height: 128px;
+.mat-tab-label {
+   height: unset !important;
+}
+
+.mat-tab-label-active {
+  opacity: 1 !important;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 1rem auto;
+  text-align: center;
+  display: inline-flex;
+  min-height: 48px;
+  border-radius: 24px;
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--primary-color);
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+
+  &:first-letter {
+    color: var(--primary-color);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      left: 0;
+      right: 0;
+      top: 50%;
+      position: absolute;
+      z-index: 0;
+      background-color: var(--primary-color);
+      transform: translateY(-1px);
+    }
+  }
 }
