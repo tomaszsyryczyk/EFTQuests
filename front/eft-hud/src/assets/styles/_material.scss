@@ -6,4 +6,13 @@
   .mat-drawer-side {
     border-right: 1px solid var(--primary-color);
   }
+
+  .mat-tab-label {
+    opacity: 0.2;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }

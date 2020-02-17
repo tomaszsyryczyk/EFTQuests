@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe(event => {
       this.sidenav.close();
+      this.showNav = false;
     });
   }
 
