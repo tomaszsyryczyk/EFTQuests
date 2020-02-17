@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" class="mat-sidenav" #sidenav (keydown.escape)="toggle()" disableClose>
+  <mat-sidenav mode="side" class="mat-sidenav" #sidenav (keydown.escape)="toggle()" disableClose>
 
     <nav class="nav toolbar__nav">
       <ul class="nav-list">
@@ -34,8 +34,6 @@
       <span class="toolbar__title">Escape From Tarkov <strong>HUD</strong></span>
 
     </mat-toolbar>
-    <section class="content">
-      <router-outlet></router-outlet>
-    </section>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
