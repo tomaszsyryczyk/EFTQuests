@@ -1,5 +1,13 @@
 .mat-tab-label {
-   height: unset !important;
+  height: unset !important;
+
+  img {
+    transition: transform 0.2s;
+  }
+
+  &-active img {
+    transform: scale(1.4);
+  }
 }
 
 .mat-tab-label-active {
@@ -24,6 +32,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+
     &::after {
       content: '';
       display: block;
