@@ -8,8 +8,27 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .loader {
+      display: grid;
+      place-items: center;
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      position: fixed;
+      width: 100%;
+    }
+  </style>
 </head>
 <body class="eft">
-  <app-root></app-root>
+  <app-root>
+    <div class="loader">
+    Loading ...
+    </div>
+  </app-root>
 </body>
 </html>
