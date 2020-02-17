@@ -33,7 +33,7 @@ export interface QuestItemRequirement{
   })
 
 export class MerchantsService {
-  private REST_API_SERVER = 'https://localhost:5001/api/';
+  private REST_API_SERVER = 'http://localhost:8081/api/';
   private REST_API_MERCHANTS = `${this.REST_API_SERVER}merchants/`;
 
   constructor(private http: HttpClient) { }
