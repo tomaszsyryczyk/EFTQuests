@@ -9,9 +9,10 @@ import { MerchantsService, Merchant } from '../services/merchants/merchants.serv
 })
 export class QuestListComponent implements OnInit {
 
-    @Input()
+  @Input()
   merchantId : number;
   merchant : Merchant;
+
   constructor(private route : ActivatedRoute, private merchantService: MerchantsService) { }
 
   ngOnInit(): void {
