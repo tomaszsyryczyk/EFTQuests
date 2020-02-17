@@ -1,6 +1,9 @@
 .eft {
-  .mat-drawer-backdrop.mat-drawer-shown {
-    background: rgba(0, 0, 0, 0.85) url('/assets/images/overlay.png') right center no-repeat;
-    background-size: cover;
+  .mat-ink-bar {
+    height: 3px;
+  }
+
+  .mat-drawer-side {
+    border-right: 1px solid var(--primary-color);
   }
 }

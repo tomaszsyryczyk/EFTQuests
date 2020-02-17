@@ -9,6 +9,7 @@ import { Router, RouterLinkActive } from '@angular/router';
 export class AppComponent implements OnInit {
 
   @ViewChild('sidenav') sidenav: MatSidenav;
+  showNav = false;
 
   constructor(private router: Router) {}
 
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  close() {
-    this.sidenav.close();
+  toggle() {
+    this.showNav = !this.showNav;
+    this.sidenav.toggle();
   };
 }
