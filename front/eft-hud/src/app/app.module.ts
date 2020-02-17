@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     CustomMaterialModule,
     HttpClientModule,
-  
+
   ],
   providers: [],
   bootstrap: [AppComponent]
