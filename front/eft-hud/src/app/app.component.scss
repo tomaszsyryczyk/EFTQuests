@@ -1,0 +1,22 @@
+.toolbar {
+    padding-left: 0;
+    border-bottom: 1px solid var(--primary-color);
+    box-shadow: none;
+
+    &__back {
+      height: 64px;
+      width: 64px;
+      display: grid;
+      place-items: center;
+      border-right: 1px solid var(--primary-color);
+      margin-right: 1rem;
+    }
+  }
+
+  .content {
+      padding: 1rem;
+  }
+
+  .mat-sidenav-content {
+      min-height: 100vh;
+  }

@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatSidenav} from '@angular/material/sidenav';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-custom-navbar',
@@ -9,24 +7,9 @@ import { Router } from '@angular/router';
 })
 export class CustomNavbarComponent implements OnInit {
 
-  @ViewChild('sidenav') sidenav: MatSidenav;
-  constructor(public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  close() {
-    this.sidenav.close();
-  };
-
-  hideout(){
-    this.router.navigate(['hideout']);
-    this.close();
-  };
-
-  merchants(){
-    this.router.navigate(['merchants']);
-    this.close();
-  };
 
 }

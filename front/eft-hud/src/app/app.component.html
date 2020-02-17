@@ -1,1 +1,28 @@
-<app-custom-navbar></app-custom-navbar>
+<mat-sidenav-container class="example-container" (backdropClick)="close()" >
+    <mat-sidenav class="nav-bar" #sidenav (keydown.escape)="close()" disableClose>
+      <p>
+        <button mat-stroked-button (click)="hideout()">Hideout</button>
+      </p> 
+      <p>
+        <button mat-stroked-button (click)="merchants()">Merchants</button>
+      </p>
+      
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="mat-sidenav-content">
+
+        <mat-toolbar class="toolbar">
+          <div class="toolbar__back">
+            <button color="primary" mat-icon-button>
+              <mat-icon color="primary" (click)="sidenav.open()">menu</mat-icon>
+            </button>
+          </div>
+          <span>Escape From Tarkov <strong>HUD</strong></span>
+
+        </mat-toolbar>
+        <section class="content">
+            <router-outlet></router-outlet>
+        </section> 
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
