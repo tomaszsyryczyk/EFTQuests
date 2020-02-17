@@ -33,21 +33,19 @@ export interface QuestItemRequirement{
   })
 
 export class MerchantsService {
-  private REST_API_SERVER = "https://localhost:5001/api/";
-  private REST_API_MERCHANTS = this.REST_API_SERVER + "merchants/";
+  private REST_API_SERVER = 'https://localhost:5001/api/';
+  private REST_API_MERCHANTS = `${this.REST_API_SERVER}merchants/`;
 
   constructor(private http: HttpClient) { }
 
   handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
-    if (error.error instanceof ErrorEvent) {
-      // Client-side errors
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // Server-side errors
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
+    errorMessage = error.error instanceof ErrorEvent
+      ? `Error: ${error.error.message}`
+      : `Error Code: ${error.status}\nMessage: ${error.message}`;
+
+
+    console.log(errorMessage)
     return throwError(errorMessage);
   }
 

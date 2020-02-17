@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./merchants.component.scss']
 })
 export class MerchantsComponent implements OnInit, OnDestroy {
-  imagesPath : string = "/assets/images/merchants/";
+  imagesPath : string = '/assets/images/merchants/';
 
   merchants: Merchant[] = [];
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -18,12 +18,12 @@ export class MerchantsComponent implements OnInit, OnDestroy {
   constructor(private merchantService: MerchantsService, private router : Router) { }
 
   ngOnInit() {
-
     this.merchantService.getMerchants().pipe(takeUntil(this.destroy$)).subscribe((data: Merchant[])=>{
       console.log(data);
       this.merchants = data;
-    })  
+    })
   }
+
   ngOnDestroy() {
     this.destroy$.next(true);
     // Unsubscribe from the subject

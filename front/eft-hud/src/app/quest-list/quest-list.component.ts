@@ -18,16 +18,13 @@ export class QuestListComponent implements OnInit {
     debugger;
     this.loadQuestForMerchant(this.merchantId);
   }
-  show(){
-    return this.merchant != null;
-  };
 
   loadQuestForMerchant(merchantId: number) {
     this.merchantService.getMerchant(merchantId).subscribe((data: Merchant)=>{
       debugger;
       console.log(data);
       this.merchant = data;
-    }) 
+    })
   }
 
 }

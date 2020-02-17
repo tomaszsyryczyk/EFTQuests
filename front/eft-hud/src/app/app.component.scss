@@ -13,8 +13,40 @@
     }
   }
 
+  .nav-list {
+    &__item {
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    &__link {
+      display: block;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      text-align: left;
+
+      &:hover span {
+        transform: translateX(1rem);
+      }
+
+      &--active {
+        color: var(--primary-color);
+        pointer-events: none;
+      }
+
+      span {
+        transition: transform 0.2s;
+        display: inline-block;
+      }
+    }
+  }
+
   .content {
       padding: 1rem;
+  }
+
+  .mat-sidenav {
+    width: 300px;
+    max-width: 100%;
   }
 
   .mat-sidenav-content {
