@@ -3,14 +3,16 @@ using System;
 using EFT_Hud.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFT_Hud.DAL.Migrations
 {
     [DbContext(typeof(EftHudDbContext))]
-    partial class EftHudDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200218215416_RewardsCount")]
+    partial class RewardsCount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

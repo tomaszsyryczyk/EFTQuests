@@ -39,5 +39,7 @@ namespace EFT_Hud.DAL.Entities
         Exit,
         Mark,
         Deliver,
+        Kill
+        
     }
 }

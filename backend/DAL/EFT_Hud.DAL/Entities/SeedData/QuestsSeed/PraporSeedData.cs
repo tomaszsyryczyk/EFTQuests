@@ -29,5 +29,22 @@ namespace EFT_Hud.DAL.Entities.SeedData.QuestsSeed
             new Quest  { Id = 22, Name = "Test drive - Part 1", MerchantId = 1,Done = false},
             new Quest  { Id = 23, Name = "Regulated materials", MerchantId = 1,Done = false},
         };
+
+        public static readonly Objective[] Objectives =
+        {
+            new Objective {Id = 25, QuestId = 1, Count = 5, CountDone = 0, Type = ObjectiveType.Kill,Description = "Scav", LocationId = LocationsSeedData.Ids.Customs},
+            new Objective {Id = 26, QuestId = 1, Count = 2, CountDone = 0, Type = ObjectiveType.Handover, ItemId = 14},
+
+        };
+
+        public static readonly Reward[] Rewards =
+        {
+            new Reward {Id = 2, QuestId = 1, Type = RewardType.Exp, Count = 600},
+            new Reward {Id = 3, QuestId = 1, Type = RewardType.PraporReputation, Count = 0.08},
+            new Reward {Id = 4, ItemId = ItemsSeedData.Ids.Roubles, QuestId = 1, Type = RewardType.Item, Count = 5000},
+            new Reward {Id = 5, ItemId = 18, QuestId = 1, Type = RewardType.Item, Count = 1},
+            new Reward {Id = 6, ItemId = 19, QuestId = 1, Type = RewardType.Item, Count = 1},
+            new Reward {Id = 7, QuestId = 1, Type = RewardType.Unlock, Description = "Unlocks purchase of Kalashnikov AKS-74U 5.45x39 at LL1"},
+        };
     }
 }

@@ -2,6 +2,13 @@
 {
     class ItemsSeedData
     {
+        internal class Ids
+        {
+            internal static int Roubles = 15;
+            internal static int Euro = 16;
+            internal static int Dollars = 17;
+        }
+
         public static readonly Item[] Items = {
             new Item  { Id = 1, Name = "Old firesteel"},
             new Item  { Id = 2, Name = "Antique axe"},
@@ -16,6 +23,15 @@
             new Item  { Id = 11, Name = "Fake mustache"},
             new Item  { Id = 12, Name = "Kotton beanie"},
             new Item  { Id = 13, Name = "Secure container Kappa"},
+            new Item  { Id = 14, Name = "MP-133 pump-action shotguns"},
+            new Item  { Id = 15, Name = "Roubles"},
+            new Item  { Id = 16, Name = "Euro"},
+            new Item  { Id = 17, Name = "Dollars"},
+            new Item  { Id = 18, Name = "PM 9x18PM pistol"},
+            new Item  { Id = 19, Name = "90-93 9x18PM Magazine, for 8 PM rounds"},
+
+            
+
         };
     }
 }

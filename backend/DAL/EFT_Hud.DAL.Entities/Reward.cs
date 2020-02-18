@@ -9,7 +9,7 @@ namespace EFT_Hud.DAL.Entities
 
         public string Description { get; set; }
 
-        public int Count { get; set; }
+        public double? Count { get; set; }
 
         [ForeignKey("QuestId")]
         public Quest Quest { get; set; }
@@ -25,6 +25,8 @@ namespace EFT_Hud.DAL.Entities
     {
         Item,
         Exp,
+        Unlock,
+        PraporReputation,
 
     }
 }
