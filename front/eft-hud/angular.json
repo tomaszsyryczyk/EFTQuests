@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "eft-hud"
+    }
+  },
+  "defaultProject": "eft-hud",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -12,7 +12,7 @@ export class QuestListComponent implements OnInit {
   @Input()
   merchantId : number;
   merchant : Merchant;
-
+  quests;
   constructor(private route : ActivatedRoute, private merchantService: MerchantsService) { }
 
   ngOnInit(): void {
@@ -22,9 +22,7 @@ export class QuestListComponent implements OnInit {
 
   loadQuestForMerchant(merchantId: number) {
     this.merchantService.getMerchant(merchantId).subscribe((data: Merchant)=>{
-      // debugger;
-      console.table(data);
-      this.merchant = data;
+      this.quests = data.quests;
     })
   }
 
