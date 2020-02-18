@@ -26,6 +26,8 @@ namespace EFT_Hud.DAL.Entities
 
         public int CountDone { get; set; }
 
+        public bool Done { get; set; }
+
         public bool Optional { get; set; }
     }
 
@@ -33,15 +35,15 @@ namespace EFT_Hud.DAL.Entities
     {
         Other = 0,
         Handover = 1,
-        Find,
-        FindInRaid,
-        Elimination,
-        Discover,
-        Skill,
-        Exit,
-        Mark,
-        Deliver,
-        Kill
+        Find=2,
+        FindInRaid=3,
+        Elimination=4,
+        Discover=5,
+        Skill=6,
+        Exit=7,
+        Mark=8,
+        Deliver=9,
+        Kill=10
         
     }
 }

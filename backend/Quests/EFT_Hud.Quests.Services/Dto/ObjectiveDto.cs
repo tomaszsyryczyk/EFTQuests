@@ -4,18 +4,14 @@ namespace EFT_Hud.Quests.Services.Dto
 {
     public class ObjectiveDto
     {
-        public string Description { get; set; }
-
-        public ObjectiveType Type { get; set; }
-
-        public int QuestId { get; set; }
-
-        public LocationDto Location { get; set; }
-
-        public ItemDto Item { get; set; }
-
+        public int Id { get; set; }
+        public string ObjectiveType { get; set; }
         public int Count { get; set; }
-
+        public string Description { get; set; }
+        public string Location { get; set; }
+        public string Using { get; set; }
         public int CountDone { get; set; }
+        public bool Done { get; set; }
+        public bool Optional { get; set; }
     }
 }
