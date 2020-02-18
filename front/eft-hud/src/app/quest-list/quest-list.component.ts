@@ -21,8 +21,8 @@ export class QuestListComponent implements OnInit {
   }
 
   loadQuestForMerchant(merchantId: number) {
-    this.merchantService.getMerchant(merchantId).subscribe((data: Merchant)=>{
-      this.quests = data.quests;
+    this.merchantService.getMerchantQuest(merchantId).subscribe((data: Merchant)=>{
+      this.quests = data;
     })
   }
 

@@ -1,4 +1,30 @@
 Mechant id: {{ merchantId }}
-<ul *ngIf="quests">
-    <li *ngFor="let quest of quests">{{quest.name}}</li>
-</ul>
+<div *ngIf="quests">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Objectives</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quest of quests">
+        <td>{{ quest.name }}</td>
+        <td>{{ quest?.description }}</td>
+        <td>
+          <ng-container *ngFor="let objective of quest.objectives">
+            <p style="margin-bottom: 0.5rem;">
+              {{ objective.objectiveType }} <strong>{{ objective.description }}</strong>
+              <ng-container *ngIf="objective.count"> x{{ objective.count }} </ng-container>
+              <ng-container *ngIf="objective.location"> in {{objective.location}} </ng-container>
+            </p>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

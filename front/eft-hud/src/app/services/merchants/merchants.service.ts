@@ -35,6 +35,7 @@ export interface QuestItemRequirement{
 export class MerchantsService {
   private REST_API_SERVER = 'http://localhost:8081/api/';
   private REST_API_MERCHANTS = `${this.REST_API_SERVER}merchants/`;
+  private REST_API_QUESTS = `${this.REST_API_SERVER}quests/merchant/`;
 
   constructor(private http: HttpClient) { }
 
@@ -45,7 +46,7 @@ export class MerchantsService {
       : `Error Code: ${error.status}\nMessage: ${error.message}`;
 
 
-    console.log(errorMessage)
+    console.log(errorMessage);
     return throwError(errorMessage);
   }
 
@@ -56,6 +57,12 @@ export class MerchantsService {
   public getMerchant(id: number){
     let url = this.REST_API_MERCHANTS + id;
     return this.http.get<Merchant>(url).pipe(retry(3), catchError(this.handleError));
+  }
+
+  public getMerchantQuest(id: number) {
+    let url = this.REST_API_QUESTS + id;
+    console.log(url);
+    return this.http.get(url);
   }
 
 }
