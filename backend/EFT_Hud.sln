@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFT_Hud.DAL.Entities", "DAL
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{72706AEA-3190-401A-B1FD-A44313C08F5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFT_Hud.Infrastructure", "Infrastructure\EFT_Hud.Infrastructure\EFT_Hud.Infrastructure.csproj", "{23119995-BDBF-4FBF-99B8-720D3EC4D327}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DAC07180-B23E-4B04-A30F-94424A1D8C64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72706AEA-3190-401A-B1FD-A44313C08F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23119995-BDBF-4FBF-99B8-720D3EC4D327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23119995-BDBF-4FBF-99B8-720D3EC4D327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23119995-BDBF-4FBF-99B8-720D3EC4D327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23119995-BDBF-4FBF-99B8-720D3EC4D327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{277C81BE-7782-4A32-A3F8-AC5F839AEDEF} = {13EBBDC6-D22E-4DA0-B70F-30511B4B6FB5}
 		{3B495A6D-4478-4B40-9661-AE6CF4A75A80} = {9FDD7F35-F464-4845-B371-8D21AC41DF36}
 		{6E7F049F-34DA-4677-BFE6-21F603E0F0D3} = {9FDD7F35-F464-4845-B371-8D21AC41DF36}
+		{23119995-BDBF-4FBF-99B8-720D3EC4D327} = {DAC07180-B23E-4B04-A30F-94424A1D8C64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8A193613-D3B3-4F9D-92D2-6127852BD79C}

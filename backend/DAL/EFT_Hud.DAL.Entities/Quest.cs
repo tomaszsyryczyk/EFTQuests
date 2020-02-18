@@ -12,16 +12,9 @@ namespace EFT_Hud.DAL.Entities
         [ForeignKey("MerchantId")]
         public Merchant Merchant { get; set; }
 
-        [Column("Merchant_Id")]
         public int MerchantId { get; set; }
         public bool Done { get; set; }
-
-        [ForeignKey("LocationId")]
-        public ICollection<LocationToQuest> Locations { get; set; }
-
         public ICollection<Objective> Objectives { get; set; }
-
-        public ICollection<ItemObjective> ItemObjectives { get; set; }
 
         public ICollection<Reward> Rewards { get; set; }
     }

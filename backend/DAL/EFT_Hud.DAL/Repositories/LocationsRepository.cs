@@ -24,7 +24,6 @@ namespace EFT_Hud.DAL.Repositories
         public Location Get(int id)
         {
             var location = _context.Locations
-                .Include(x => x.Quests)
                 .Single(x => x.Id == id);
 
             return location;

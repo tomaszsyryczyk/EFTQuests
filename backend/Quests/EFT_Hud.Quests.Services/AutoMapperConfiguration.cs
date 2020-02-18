@@ -17,7 +17,10 @@ namespace EFT_Hud.Quests.Services
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<Location, LocationDto>();
                 cfg.CreateMap<Merchant, MerchantDto>();
-                cfg.CreateMap<Quest, QuestDto>(); 
+                cfg.CreateMap<Quest, QuestDto>();
+                cfg.CreateMap<Objective, ObjectiveDto>();
+                cfg.CreateMap<Item, ItemDto>();
+                cfg.CreateMap<Reward, RewardDto>();
             });
 
             var mapper = config.CreateMapper();

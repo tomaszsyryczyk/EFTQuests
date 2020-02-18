@@ -17,7 +17,14 @@ namespace EFT_Hud.DAL.Repositories
 
         public IEnumerable<Quest> GetAll()
         {
-            var quests = _context.Quests;
+            var quests = _context.Quests
+                .Include(x => x.Merchant)
+                .Include(x => x.Objectives)
+                .ThenInclude(obj => obj.Item)
+                .Include(x => x.Objectives)
+                .ThenInclude(obj => obj.Location)
+                .Include(x => x.Rewards)
+                .ThenInclude(obj => obj.Item);
 
             return quests;
         }
@@ -25,7 +32,6 @@ namespace EFT_Hud.DAL.Repositories
         public Quest Get(int id)
         {
             var quest = _context.Quests
-                .Include(x => x.ItemObjectives)
                 .Include(x => x.Merchant)
                 .Include(x => x.Objectives)
                 .Include(x => x.Rewards)
