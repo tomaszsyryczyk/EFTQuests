@@ -1,0 +1,40 @@
+version: '3.4'
+
+services:
+  eft_hud:
+    container_name: eft_hud
+    image: ${DOCKER_REGISTRY-}efthud
+    build:
+      context: .
+      dockerfile: EFT_Hud/Dockerfile
+    ports:  
+      - '8081:80'  
+      - '8082:443'  
+    expose:  
+      - 8081 
+      - 8082  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    links:
+      - sqlserver
+    networks:
+      - my-network-name
+
+  sqlserver:  
+    container_name: sqlserver
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'eftuser'
+      MYSQL_PASSWORD: 'eftuser'
+      MYSQL_ROOT_PASSWORD: 'eftuser'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - my-network-name
+
+networks:
+    my-network-name:

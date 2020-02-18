@@ -1,3 +1,4 @@
-<ul *ngIf="show()">
-    <li *ngFor="let quest of merchant.quests">{{quest.name}}</li> 
+Mechant id: {{ merchantId }}
+<ul *ngIf="quests">
+    <li *ngFor="let quest of quests">{{quest.name}}</li>
 </ul>

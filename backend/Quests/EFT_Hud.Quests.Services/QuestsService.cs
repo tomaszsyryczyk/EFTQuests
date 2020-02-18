@@ -9,6 +9,7 @@ namespace EFT_Hud.Quests.Services
     public interface IQuestsService
     {
         IEnumerable<QuestDto> GetAll();
+        IEnumerable<QuestDto> GetForMerchant(int id);
     }
 
     public class QuestsService : IQuestsService
@@ -24,6 +25,17 @@ namespace EFT_Hud.Quests.Services
         {
             var merchants = _repository
                 .GetAll()
+                .Select(AutoMapperHelper.Map<Quest, QuestDto>)
+                .ToList();
+
+            return merchants;
+        }
+
+        public IEnumerable<QuestDto> GetForMerchant(int id)
+        {
+            var merchants = _repository
+                .GetAll()
+                .Where(x => x.MerchantId == id)
                 .Select(AutoMapperHelper.Map<Quest, QuestDto>)
                 .ToList();
 

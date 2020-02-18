@@ -17,9 +17,17 @@ namespace EFT_Hud.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Quests.Services.Dto.QuestDto> Get(int id)
+        public IEnumerable<Quests.Services.Dto.QuestDto> Get()
         {
             var quests = _questsService.GetAll();
+
+            return quests;
+        }
+
+        [HttpGet("merchant/{id}")]
+        public IEnumerable<Quests.Services.Dto.QuestDto> GetForMerchant(int id)
+        {
+            var quests = _questsService.GetForMerchant(id);
 
             return quests;
         }

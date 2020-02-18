@@ -13,16 +13,12 @@ namespace EFT_Hud.DAL.Entities
         {
             base.OnModelCreating(modelBuilder);
             SeedData.SeedData.CreateSeed(modelBuilder);
-
-            modelBuilder.Entity<LocationToQuest>()
-                .HasKey(e => new { e.LocationId, e.QuestId });
         }
 
         public DbSet<Merchant> Merchants { get; set; }
         public DbSet<Quest> Quests { get; set; }
         public DbSet<Objective> Objectives { get; set; }
         public DbSet<Item> Items { get; set; }
-        public DbSet<ItemObjective> ItemObjectives { get; set; }
         public DbSet<Reward> Rewards { get; set; }
         public DbSet<Location> Locations { get; set; }
 

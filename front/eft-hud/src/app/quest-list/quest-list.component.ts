@@ -9,25 +9,21 @@ import { MerchantsService, Merchant } from '../services/merchants/merchants.serv
 })
 export class QuestListComponent implements OnInit {
 
-    @Input()
+  @Input()
   merchantId : number;
   merchant : Merchant;
+  quests;
   constructor(private route : ActivatedRoute, private merchantService: MerchantsService) { }
 
   ngOnInit(): void {
-    debugger;
+    // debugger;
     this.loadQuestForMerchant(this.merchantId);
   }
-  show(){
-    return this.merchant != null;
-  };
 
   loadQuestForMerchant(merchantId: number) {
     this.merchantService.getMerchant(merchantId).subscribe((data: Merchant)=>{
-      debugger;
-      console.log(data);
-      this.merchant = data;
-    }) 
+      this.quests = data.quests;
+    })
   }
 
 }
