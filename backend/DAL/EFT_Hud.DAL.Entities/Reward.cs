@@ -27,6 +27,13 @@ namespace EFT_Hud.DAL.Entities
         Exp,
         Unlock,
         PraporReputation,
+        TherapistReputation,
+        SkierReputation,
+        PeacekeeperReputation,
+        MechanicReputation,
+        RagmanReputation,
+        JeagerReputation,
+        FenceReputation
 
     }
 }

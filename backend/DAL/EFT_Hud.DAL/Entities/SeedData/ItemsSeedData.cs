@@ -29,9 +29,17 @@
             new Item  { Id = 17, Name = "Dollars"},
             new Item  { Id = 18, Name = "PM 9x18PM pistol"},
             new Item  { Id = 19, Name = "90-93 9x18PM Magazine, for 8 PM rounds"},
+            new Item  { Id = 20, Name = "bronze pocket watch"},
+            new Item  { Id = 21, Name = "TT pistol 7.62x25 TT"},
+            new Item  { Id = 22, Name = "TT-105 7.62x25 TT Magazine"},
+            new Item  { Id = 23, Name = "Kalashnikov AKS-74U 5.45x39"},
+            new Item  { Id = 24, Name = "6L20 30-round 5.45x39 magazine for AK-74 and compatible weapons"},
+            new Item  { Id = 25, Name = "Saiga 12ga ver. 10 12/76 shotgun"},
+            new Item  { Id = 26, Name = "Sb.5 5-round 12/76 magazine for SOK-12 and compatible weapons"},
+            new Item  { Id = 27, Name = "RGD-5 hand grenade"},
+
 
             
-
         };
     }
 }

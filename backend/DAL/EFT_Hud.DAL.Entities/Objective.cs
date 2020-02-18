@@ -25,13 +25,15 @@ namespace EFT_Hud.DAL.Entities
         public int Count { get; set; }
 
         public int CountDone { get; set; }
+
+        public bool Optional { get; set; }
     }
 
     public enum ObjectiveType
     {
-        Other,
-        Handover,
-        Pickup,
+        Other = 0,
+        Handover = 1,
+        Find,
         FindInRaid,
         Elimination,
         Discover,
