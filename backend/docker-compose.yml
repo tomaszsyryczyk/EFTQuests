@@ -15,7 +15,7 @@ services:
       - 8082  
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-    links:
+    depends_on:
       - sqlserver
     networks:
       - my-network-name

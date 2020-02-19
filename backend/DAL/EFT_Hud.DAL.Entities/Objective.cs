@@ -22,6 +22,10 @@ namespace EFT_Hud.DAL.Entities
         [ForeignKey("ItemId")]
         public Item Item { get; set; }
 
+        public int? UsingItemId { get; set; }
+        [ForeignKey("UsingItemId")]
+        public Item UsingItem { get; set; }
+
         public int Count { get; set; }
 
         public int CountDone { get; set; }

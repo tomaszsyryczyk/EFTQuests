@@ -7,6 +7,7 @@
             internal static int Roubles = 15;
             internal static int Euro = 16;
             internal static int Dollars = 17;
+            internal static int Marker = 28;
         }
 
         public static readonly Item[] Items = {
@@ -24,9 +25,9 @@
             new Item  { Id = 12, Name = "Kotton beanie"},
             new Item  { Id = 13, Name = "Secure container Kappa"},
             new Item  { Id = 14, Name = "MP-133 pump-action shotguns"},
-            new Item  { Id = 15, Name = "Roubles"},
-            new Item  { Id = 16, Name = "Euro"},
-            new Item  { Id = 17, Name = "Dollars"},
+            new Item  { Id = Ids.Roubles, Name = "Roubles"},
+            new Item  { Id = Ids.Euro, Name = "Euro"},
+            new Item  { Id = Ids.Dollars, Name = "Dollars"},
             new Item  { Id = 18, Name = "PM 9x18PM pistol"},
             new Item  { Id = 19, Name = "90-93 9x18PM Magazine, for 8 PM rounds"},
             new Item  { Id = 20, Name = "bronze pocket watch"},
@@ -37,9 +38,10 @@
             new Item  { Id = 25, Name = "Saiga 12ga ver. 10 12/76 shotgun"},
             new Item  { Id = 26, Name = "Sb.5 5-round 12/76 magazine for SOK-12 and compatible weapons"},
             new Item  { Id = 27, Name = "RGD-5 hand grenade"},
+            new Item  { Id = Ids.Marker, Name = "Marker 2000"},
 
 
-            
+
         };
     }
 }
