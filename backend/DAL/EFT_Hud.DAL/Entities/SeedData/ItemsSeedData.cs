@@ -8,6 +8,10 @@
             internal static int Euro = 16;
             internal static int Dollars = 17;
             internal static int Marker = 28;
+            internal static int Key_ZB_014 = 30;
+            internal static int Key_Portable_cabin_key_of_customs_Factory_zone = 31;
+
+            
         }
 
         public static readonly Item[] Items = {
@@ -39,9 +43,12 @@
             new Item  { Id = 26, Name = "Sb.5 5-round 12/76 magazine for SOK-12 and compatible weapons"},
             new Item  { Id = 27, Name = "RGD-5 hand grenade"},
             new Item  { Id = Ids.Marker, Name = "Marker 2000"},
-
-
-
+            new Item  { Id = 29, Name = "secure folder 0031"},
+            new Item  { Id = Ids.Key_ZB_014, Name = "Key ZB-014"},
+            new Item  { Id = Ids.Key_Portable_cabin_key_of_customs_Factory_zone, Name = "Portable cabin key of customs Factory zone"},
+            new Item  { Id = 32, Name = "60-round mags for AK"},
+            new Item  { Id = 33, Name = "Sealed letter"},
+           
         };
     }
 }

@@ -13,9 +13,17 @@ namespace EFT_Hud.DAL.Entities
         public Merchant Merchant { get; set; }
 
         public int MerchantId { get; set; }
-        public bool Done { get; set; }
+        public ObjectiveStatus Status { get; set; }
         public ICollection<Objective> Objectives { get; set; }
 
         public ICollection<Reward> Rewards { get; set; }
+    }
+
+    public enum ObjectiveStatus
+    {
+        New,
+        Active,
+        Completed,
+        Failed
     }
 }

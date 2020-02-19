@@ -8,7 +8,7 @@
         }
 
         public static readonly Quest[] Quests = {
-            new Quest  { Id = Ids.Collector, Name = "Collector", MerchantId = 8,Done = false},
+            new Quest  { Id = Ids.Collector, Name = "Collector", MerchantId = 8,Status = ObjectiveStatus.New},
         };
 
         public static readonly Objective[] Objectives =
