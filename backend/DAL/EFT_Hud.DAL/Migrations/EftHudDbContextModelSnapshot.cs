@@ -171,6 +171,36 @@ namespace EFT_Hud.DAL.Migrations
                         {
                             Id = 27,
                             Name = "RGD-5 hand grenade"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Name = "Marker 2000"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Name = "secure folder 0031"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Name = "Key ZB-014"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Name = "Portable cabin key of customs Factory zone"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Name = "60-round mags for AK"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Name = "Sealed letter"
                         });
                 });
 
@@ -325,6 +355,9 @@ namespace EFT_Hud.DAL.Migrations
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
+                    b.Property<int?>("UsingItemId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ItemId");
@@ -332,6 +365,8 @@ namespace EFT_Hud.DAL.Migrations
                     b.HasIndex("LocationId");
 
                     b.HasIndex("QuestId");
+
+                    b.HasIndex("UsingItemId");
 
                     b.ToTable("Objective");
 
@@ -452,7 +487,8 @@ namespace EFT_Hud.DAL.Migrations
                             LocationId = 4,
                             Optional = false,
                             QuestId = 5,
-                            Type = 8
+                            Type = 8,
+                            UsingItemId = 28
                         },
                         new
                         {
@@ -464,7 +500,8 @@ namespace EFT_Hud.DAL.Migrations
                             LocationId = 4,
                             Optional = false,
                             QuestId = 5,
-                            Type = 8
+                            Type = 8,
+                            UsingItemId = 28
                         },
                         new
                         {
@@ -476,7 +513,8 @@ namespace EFT_Hud.DAL.Migrations
                             LocationId = 4,
                             Optional = false,
                             QuestId = 5,
-                            Type = 8
+                            Type = 8,
+                            UsingItemId = 28
                         },
                         new
                         {
@@ -488,7 +526,8 @@ namespace EFT_Hud.DAL.Migrations
                             LocationId = 4,
                             Optional = false,
                             QuestId = 5,
-                            Type = 8
+                            Type = 8,
+                            UsingItemId = 28
                         },
                         new
                         {
@@ -500,6 +539,145 @@ namespace EFT_Hud.DAL.Migrations
                             Optional = false,
                             QuestId = 5,
                             Type = 7
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 29,
+                            LocationId = 4,
+                            Optional = false,
+                            QuestId = 6,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Count = 1,
+                            CountDone = 0,
+                            Description = "Gain access to the closed room in offices",
+                            Done = false,
+                            LocationId = 5,
+                            Optional = true,
+                            QuestId = 6,
+                            Type = 5
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 31,
+                            LocationId = 5,
+                            Optional = true,
+                            QuestId = 6,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 29,
+                            LocationId = 4,
+                            Optional = false,
+                            QuestId = 6,
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            LocationId = 4,
+                            Optional = false,
+                            QuestId = 6,
+                            Type = 7
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Count = 6,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 32,
+                            Optional = false,
+                            QuestId = 7,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 30,
+                            LocationId = 4,
+                            Optional = false,
+                            QuestId = 7,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Count = 1,
+                            CountDone = 0,
+                            Description = "Locate the right bunker",
+                            Done = false,
+                            LocationId = 2,
+                            Optional = false,
+                            QuestId = 7,
+                            Type = 5
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Count = 6,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 32,
+                            Optional = false,
+                            QuestId = 7,
+                            Type = 1
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 33,
+                            LocationId = 5,
+                            Optional = false,
+                            QuestId = 8,
+                            Type = 2
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            LocationId = 5,
+                            Optional = false,
+                            QuestId = 8,
+                            Type = 7
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Count = 1,
+                            CountDone = 0,
+                            Done = false,
+                            ItemId = 33,
+                            Optional = false,
+                            QuestId = 8,
+                            Type = 1
                         },
                         new
                         {
@@ -773,14 +951,14 @@ namespace EFT_Hud.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("Done")
-                        .HasColumnType("tinyint(1)");
-
                     b.Property<int>("MerchantId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -792,170 +970,331 @@ namespace EFT_Hud.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Debiut"
+                            Name = "Debiut",
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Checking"
+                            Name = "Checking",
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Shootout picnic"
+                            Name = "Shootout picnic",
+                            Status = 0
                         },
                         new
                         {
                             Id = 4,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Delivery from the past"
+                            Name = "Delivery from the past",
+                            Status = 0
                         },
                         new
                         {
                             Id = 5,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "BP Depot"
+                            Name = "BP Depot",
+                            Status = 0
                         },
                         new
                         {
                             Id = 6,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Bad rep evidence"
+                            Name = "Bad rep evidence",
+                            Status = 0
                         },
                         new
                         {
                             Id = 7,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Ice cream cones"
+                            Name = "Ice cream cones",
+                            Status = 0
                         },
                         new
                         {
                             Id = 8,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Postman pat - part 1"
+                            Name = "Postman part - part 1",
+                            Status = 0
                         },
                         new
                         {
                             Id = 9,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Shaking up teller"
+                            Name = "Shaking up teller",
+                            Status = 0
                         },
                         new
                         {
                             Id = 10,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 1"
+                            Name = "The Punisher - part 1",
+                            Status = 0
                         },
                         new
                         {
                             Id = 11,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 2"
+                            Name = "The Punisher - part 2",
+                            Status = 0
                         },
                         new
                         {
                             Id = 12,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 3"
+                            Name = "The Punisher - part 3",
+                            Status = 0
                         },
                         new
                         {
                             Id = 13,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 4"
+                            Name = "The Punisher - part 4",
+                            Status = 0
                         },
                         new
                         {
                             Id = 14,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 5"
+                            Name = "The Punisher - part 5",
+                            Status = 0
                         },
                         new
                         {
                             Id = 15,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "The Punisher - part 6"
+                            Name = "The Punisher - part 6",
+                            Status = 0
                         },
                         new
                         {
                             Id = 16,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Polikhim hobo"
+                            Name = "Polikhim hobo",
+                            Status = 0
                         },
                         new
                         {
                             Id = 17,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Big customer"
+                            Name = "Big customer",
+                            Status = 0
                         },
                         new
                         {
                             Id = 18,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "No offence"
+                            Name = "No offence",
+                            Status = 0
                         },
                         new
                         {
                             Id = 19,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Grenadier"
+                            Name = "Grenadier",
+                            Status = 0
                         },
                         new
                         {
                             Id = 20,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Perfect mediator"
+                            Name = "Perfect mediator",
+                            Status = 0
                         },
                         new
                         {
                             Id = 21,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Insomnia"
+                            Name = "Insomnia",
+                            Status = 0
                         },
                         new
                         {
                             Id = 22,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Test drive - Part 1"
+                            Name = "Test drive - Part 1",
+                            Status = 0
                         },
                         new
                         {
                             Id = 23,
-                            Done = false,
                             MerchantId = 1,
-                            Name = "Regulated materials"
+                            Name = "Regulated materials",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 25,
+                            MerchantId = 2,
+                            Name = "Shortage",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 26,
+                            MerchantId = 2,
+                            Name = "Sanitary Standards - Part 1",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 27,
+                            MerchantId = 2,
+                            Name = "Sanitary Standards - Part 2",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 28,
+                            MerchantId = 2,
+                            Name = "Operation Aquarius - Part 1",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 29,
+                            MerchantId = 2,
+                            Name = "Operation Aquarius - Part 2",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 30,
+                            MerchantId = 2,
+                            Name = "Painkiller",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 31,
+                            MerchantId = 2,
+                            Name = "Pharmacist",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 32,
+                            MerchantId = 2,
+                            Name = "Supply plans",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 33,
+                            MerchantId = 2,
+                            Name = "General wares",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 34,
+                            MerchantId = 2,
+                            Name = "Car repair",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 35,
+                            MerchantId = 2,
+                            Name = "Health Care Privacy - Part 1",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 36,
+                            MerchantId = 2,
+                            Name = "Health Care Privacy - Part 2",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 37,
+                            MerchantId = 2,
+                            Name = "Health Care Privacy - Part 3",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 38,
+                            MerchantId = 2,
+                            Name = "Health Care Privacy - Part 4",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 39,
+                            MerchantId = 2,
+                            Name = "Health Care Privacy - Part 5",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 40,
+                            MerchantId = 2,
+                            Name = "Postman Pat - Part 2",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 41,
+                            MerchantId = 2,
+                            Name = "Out of curiosity",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 42,
+                            MerchantId = 2,
+                            Name = "Trust regain",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 43,
+                            MerchantId = 2,
+                            Name = "Hippocratic Vow",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 44,
+                            MerchantId = 2,
+                            Name = "Private clinic",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 45,
+                            MerchantId = 2,
+                            Name = "Athlete",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 46,
+                            MerchantId = 2,
+                            Name = "Decontamination service",
+                            Status = 0
+                        },
+                        new
+                        {
+                            Id = 47,
+                            MerchantId = 2,
+                            Name = "An apple a day - keeps the doctor away",
+                            Status = 0
                         },
                         new
                         {
                             Id = 24,
-                            Done = false,
                             MerchantId = 8,
-                            Name = "Collector"
+                            Name = "Collector",
+                            Status = 0
                         });
                 });
 
@@ -1218,6 +1557,10 @@ namespace EFT_Hud.DAL.Migrations
                         .HasForeignKey("QuestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("EFT_Hud.DAL.Entities.Item", "UsingItem")
+                        .WithMany()
+                        .HasForeignKey("UsingItemId");
                 });
 
             modelBuilder.Entity("EFT_Hud.DAL.Entities.Quest", b =>

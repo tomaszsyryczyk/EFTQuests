@@ -23,6 +23,8 @@ namespace EFT_Hud.DAL.Repositories
                 .ThenInclude(obj => obj.Item)
                 .Include(x => x.Objectives)
                 .ThenInclude(obj => obj.Location)
+                .Include(x => x.Objectives)
+                .ThenInclude(obj => obj.UsingItem)
                 .Include(x => x.Rewards)
                 .ThenInclude(obj => obj.Item);
 

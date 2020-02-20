@@ -22,7 +22,8 @@ namespace EFT_Hud.Quests.Services
                 cfg.CreateMap<Objective, ObjectiveDto>()
                     .ForMember(dto => dto.Location,entity => entity.MapFrom(value => value.Location.Name))
                     .ForMember(x => x.Description, entity => entity.MapFrom(value => GetDescription(value)))
-                    .ForMember(x => x.ObjectiveType, entity => entity.MapFrom(value => GetObjectiveType(value.Type)));
+                    .ForMember(x => x.ObjectiveType, entity => entity.MapFrom(value => GetObjectiveType(value.Type)))
+                    .ForMember(x => x.Using, entity => entity.MapFrom(value => value.UsingItem.Name));
                 cfg.CreateMap<Item, ItemDto>();
                 cfg.CreateMap<Reward, RewardDto>()
                     .ForMember(dto => dto.Type, entity => entity.MapFrom(value => GetRewardType(value.Type)))
