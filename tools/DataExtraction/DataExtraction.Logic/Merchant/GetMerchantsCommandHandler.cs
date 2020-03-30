@@ -1,6 +1,11 @@
 ﻿namespace DataExtraction.Logic.Merchant
 {
-    public class GetMerchantsCommandHandler 
+    public interface IGetMerchantsCommandHandler
+    {
+        void Handle();
+    }
+
+    public class GetMerchantsCommandHandler : IGetMerchantsCommandHandler
     {
         private readonly IMerchantParser _parser;
         private readonly IMerchantPersister _persister;

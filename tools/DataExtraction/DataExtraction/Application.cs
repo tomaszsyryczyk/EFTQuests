@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataExtraction.Logic;
-using DataExtraction.Logic.Merchant;
-using HtmlAgilityPack;
+﻿using DataExtraction.Logic.Merchant;
+using DataExtraction.Logic.MerchantQuests;
+using DataExtraction.Logic.ObjectStore;
 
 namespace DataExtraction
 {
@@ -14,30 +11,31 @@ namespace DataExtraction
 
     public class Application : IApplication
     {
-        private readonly IPageHtmlProvider _pageHtmlProvider;
-        private readonly IMerchantPersister _merchantPersister;
-        private readonly IMerchantParser _merchantParser;
+        private readonly IGetMerchantsCommandHandler _merchantsCommandHandler;
+        private readonly IMerchantQuestsCommandHandler _merchantQuestsCommandHandler;
 
-        private const string StartingUrl = @"https://escapefromtarkov.gamepedia.com/Quests";
-        private HtmlDocument _root;
-
-        public Application(IPageHtmlProvider pageHtmlProvider, IMerchantParser merchantParser, IMerchantPersister merchantPersister)
+        public Application(IGetMerchantsCommandHandler merchantsCommandHandler, IMerchantQuestsCommandHandler merchantQuestsCommandHandler)
         {
-            _merchantParser = merchantParser;
-            _merchantPersister = merchantPersister;
-            _pageHtmlProvider = pageHtmlProvider;
+            _merchantQuestsCommandHandler = merchantQuestsCommandHandler;
+            _merchantsCommandHandler = merchantsCommandHandler;
         }
 
         public void Start()
         {
-            _root = _pageHtmlProvider.Load(StartingUrl);
             ParseMerchants();
+            ParseMerchantQuests();
+            var test1 = CustomObjectStore.Merchants;
+            var test2  = CustomObjectStore.MerchantsQuests;
+        }
+
+        private void ParseMerchantQuests()
+        {
+            _merchantQuestsCommandHandler.Handle();
         }
 
         private void ParseMerchants()
         {
-            var merchants = _merchantParser.Parse(_root);
-            _merchantPersister.Persist(merchants);
+            _merchantsCommandHandler.Handle();
         }
     }
 }

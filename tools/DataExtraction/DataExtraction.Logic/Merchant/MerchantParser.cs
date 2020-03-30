@@ -15,11 +15,9 @@ namespace DataExtraction.Logic.Merchant
         private readonly IPageHtmlProvider _pageHtmlProvider;
         private const string XPathToMerchants = "//div[contains(@class, 'dealer-toggle')]";
 
-        public MerchantParser(IPageHtmlProvider pageHtmlProvider
-            ,IMerchantQuestsParser merchantQuestsParser)
+        public MerchantParser(IPageHtmlProvider pageHtmlProvider)
         {
             _pageHtmlProvider = pageHtmlProvider;
-            _merchantQuestsParser = merchantQuestsParser;
         }
 
         public MerchantDto[] Parse()

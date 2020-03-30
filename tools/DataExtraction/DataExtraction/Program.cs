@@ -11,6 +11,8 @@ namespace DataExtraction
         static void Main(string[] args)
         {
            AutofacInit();
+           var app = Container.Resolve<IApplication>();
+           app.Start();
         }
 
         static void AutofacInit()

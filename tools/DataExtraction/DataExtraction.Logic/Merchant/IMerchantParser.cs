@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using HtmlAgilityPack;
-
-namespace DataExtraction.Logic.Merchant
+﻿namespace DataExtraction.Logic.Merchant
 {
     public interface IMerchantParser
     {
