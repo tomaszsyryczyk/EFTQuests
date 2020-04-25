@@ -11,7 +11,7 @@ const appRoutes: Routes = [
   { path: 'merchants', component: MerchantsComponent },
 
   { path: '',
-    redirectTo: '/hideout',
+    redirectTo: '/merchants',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
